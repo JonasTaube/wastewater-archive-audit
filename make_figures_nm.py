@@ -22,6 +22,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 sys.path.insert(0, r"D:\南开CDC\task\1、监测殖民主义")
 
 import matplotlib
+import matplotlib.patches as mpatches
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.path import Path
@@ -555,95 +556,239 @@ def fig3():
 
 # ================================================================= Fig 4 (data-flow architecture)
 def fig4():
+    """Icon-based data-flow architecture with audit metrics and O/V/E badges."""
     t0 = time.time()
-    fig = plt.figure(figsize=(7.09, 4.65))
-    ax = fig.add_axes([0.005, 0.01, 0.99, 0.98])
+    fig = plt.figure(figsize=(7.09, 5.60))
+    ax = fig.add_axes([0.005, 0.005, 0.99, 0.99])
     ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
 
-    BROWN = "#8C510A"; DGREEN = "#1B7837"
-    COL_CLOSED = "#F5EFE6"; COL_OPEN = "#E3F0FA"
+    BROWN = "#8C510A"; DGREEN = "#1B7837"; CRIM = "#A50F15"; BLU = "#2171B5"
+    COL_CLOSED = "#F5EFE6"; COL_OPEN = "#EFF6FB"
+    BADGE = {"g": "#238B45", "a": "#E69F00", "r": "#CB181D", "n": "#B3B3B3"}
 
     rows = [
         dict(num="1", name="Poliovirus\nsurveillance", col=BROWN,
-             nodes=[("Sewershed", COL_CLOSED), ("National\nlaboratory", COL_CLOSED),
-                    ("WHO / national\nstructures", COL_CLOSED), ("Primary records\n(not deposited)", COL_CLOSED)],
-             flow_labels=[None, None, None, None],
-             right="Gated:\nrecords not in\nthe public archive", rcol=BROWN),
+             icons=["drop", "flask", "gov", "folderlock"],
+             labels=["Sewershed", "National\nlaboratory", "WHO / national\nstructures", "Primary records\n(not deposited)"],
+             fills=[COL_CLOSED] * 4,
+             metrics="0 records in the public\narchive; primary records\nnot openly deposited",
+             outcome="Gated", badges="rnn"),
         dict(num="2", name="China CWSS\nplatform", col=BROWN,
-             nodes=[("Sewershed", COL_CLOSED), ("City / national\nlaboratory", COL_CLOSED),
-                    ("National platform\n(internal analysis)", COL_CLOSED), ("No public\nport", COL_CLOSED)],
-             flow_labels=[None, None, None, "X"],
-             right="Closed:\n0 records in the\npublic archive", rcol=BROWN),
-        dict(num="3", name="Open INSDC\n(SARS-CoV-2)", col=RED,
-             nodes=[("Sewershed", COL_OPEN), ("National\nlaboratory", COL_OPEN),
-                    ("EBI / ENA gateway\n(UK account; 98.9%)", "#FBE4E4"), ("Public archive", COL_OPEN)],
-             flow_labels=[None, None, None, None],
-             right="Open but routed:\n82,757 records;\n60.0% from one\ncountry", rcol=RED),
-        dict(num="4", name="GISAID\nrepository", col="#1F78B4",
-             nodes=[("Sewershed", COL_CLOSED), ("Laboratory", COL_CLOSED),
-                    ("Registration +\ndata-access agreement", COL_CLOSED), ("GISAID\n(approval)", COL_CLOSED)],
-             flow_labels=[None, None, None, None],
-             right="Gated:\nfew wastewater\nrecords", rcol="#1F78B4"),
+             icons=["drop", "flask", "server", "redx"],
+             labels=["Sewershed", "City / national\nlaboratory", "National platform\n(internal analysis)", "No public\nport"],
+             fills=[COL_CLOSED] * 4,
+             metrics="0 records in the public\narchive; >200,000 data\npoints held nationally",
+             outcome="Closed", badges="rnn"),
+        dict(num="3", name="Open INSDC\n(SARS-CoV-2)", col=CRIM,
+             icons=["drop", "flask", "globe", "dbopen"],
+             labels=["Sewershed", "National\nlaboratory", "EBI / ENA gateway\n(UK-registered;\n98.9%)", "Public archive"],
+             fills=[COL_OPEN] * 4,
+             metrics="82,757 records; 98.9%\nvia one account; median\nlag 890 d; LMIC 0.47%",
+             outcome="Open but routed", badges="grr", highlight=True),
+        dict(num="4", name="GISAID\nrepository", col=BLU,
+             icons=["drop", "flask", "doclock", "dbkey"],
+             labels=["Sewershed", "Laboratory", "Registration +\ndata-access agreement", "GISAID\n(approval)"],
+             fills=[COL_CLOSED] * 4,
+             metrics="Few wastewater records;\napproval-gated access",
+             outcome="Gated", badges="ann"),
         dict(num="5", name="Proposed\nregional hub", col=DGREEN,
-             nodes=[("Sewershed", "#E8F4E8"), ("Regional\nsequencing hub", "#E8F4E8"),
-                    ("Local submission\naccount + attribution\nmetadata", "#D3ECD3"), ("Public archive", "#E8F4E8")],
-             flow_labels=[None, None, None, None],
-             right="Open and\nsovereign:\nlocal account\nholding", rcol=DGREEN),
+             icons=["drop", "flask", "house", "dbcheck"],
+             labels=["Sewershed", "Regional\nsequencing hub", "Local submission\naccount + attribution\nmetadata", "Public archive"],
+             fills=["#E8F4E8"] * 4,
+             metrics="Local account holding;\nmodel: Ethiopia, 79\nrecords, median 672 d",
+             outcome="Open and sovereign", badges="ggg"),
     ]
 
-    row_y = {0: 86.5, 1: 69.5, 2: 52.5, 3: 35.5, 4: 13.0}
-    row_h = 12.6
+    row_y = {0: 87.0, 1: 70.6, 2: 54.2, 3: 37.8, 4: 19.4}
+    row_h = 12.8
     widths = [12.5, 12.5, 15.5, 13.5]
-    xs_left = [12.5, 27.5, 44.5, 66.0]
+    xs_left = [13.0, 28.5, 45.5, 66.5]
+    CB_X, CB_W = 82.0, 17.6          # callout box
+
+    # ---- icon primitives (line art, centred at cx, cy, size s ~ half-width)
+    def ic_drop(cx, cy, s, c):
+        th = np.deg2rad(np.linspace(130, 410, 60))
+        r = s * 0.55
+        cyc = cy - s * 0.18
+        xs = cx + r * np.cos(th)
+        ys = cyc + r * np.sin(th)
+        ax.add_patch(plt.Polygon(np.column_stack([np.r_[xs, cx], np.r_[ys, cy + s * 0.85]]),
+                                 closed=True, fill=False, edgecolor=c, lw=0.9, zorder=4,
+                                 joinstyle="round"))
+
+    def ic_flask(cx, cy, s, c):
+        ax.plot([cx - s * 0.28, cx - s * 0.28, cx - s * 0.75, cx + s * 0.75,
+                 cx + s * 0.28, cx + s * 0.28, cx - s * 0.28],
+                [cy + s * 0.8, cy + s * 0.15, cy - s * 0.7, cy - s * 0.7,
+                 cy + s * 0.15, cy + s * 0.8, cy + s * 0.8],
+                color=c, lw=0.9, zorder=4)
+        ax.plot([cx - s * 0.5, cx + s * 0.5], [cy - s * 0.28, cy - s * 0.28],
+                color=c, lw=0.9, zorder=4)
+
+    def ic_gov(cx, cy, s, c):
+        ax.add_patch(plt.Polygon([(cx - s * 0.85, cy + s * 0.25), (cx, cy + s * 0.85),
+                                  (cx + s * 0.85, cy + s * 0.25)], closed=True,
+                                 fill=False, edgecolor=c, lw=0.9, zorder=4))
+        for k in (-0.55, -0.18, 0.18, 0.55):
+            ax.plot([cx + k * s, cx + k * s], [cy + s * 0.2, cy - s * 0.55],
+                    color=c, lw=0.9, zorder=4)
+        ax.plot([cx - s * 0.85, cx + s * 0.85], [cy - s * 0.7, cy - s * 0.7],
+                color=c, lw=0.9, zorder=4)
+
+    def ic_server(cx, cy, s, c):
+        ax.add_patch(plt.Rectangle((cx - s * 0.65, cy - s * 0.8), s * 1.3, s * 1.6,
+                                   fill=False, edgecolor=c, lw=0.9, zorder=4))
+        for yy in (cy + s * 0.42, cy):
+            ax.plot([cx - s * 0.65, cx + s * 0.65], [yy, yy], color=c, lw=0.9, zorder=4)
+        ax.plot([cx - s * 0.35], [cy - s * 0.38], marker="o", ms=1.3, color=c, zorder=4)
+        ax.plot([cx + 0.05 * s, cx + 0.4 * s], [cy - s * 0.38] * 2, color=c, lw=0.9, zorder=4)
+
+    def ic_globe(cx, cy, s, c):
+        ax.add_patch(plt.Circle((cx, cy), s * 0.78, fill=False, edgecolor=c, lw=0.9, zorder=4))
+        ax.add_patch(mpatches.Ellipse((cx, cy), s * 0.75, s * 1.56, fill=False,
+                                 edgecolor=c, lw=0.7, zorder=4))
+        ax.plot([cx - s * 0.78, cx + s * 0.78], [cy, cy], color=c, lw=0.7, zorder=4)
+
+    def ic_doclock(cx, cy, s, c):
+        ax.plot([cx - s * 0.45, cx - s * 0.45, cx + s * 0.05, cx + s * 0.5,
+                 cx + s * 0.5, cx - s * 0.45],
+                [cy - s * 0.75, cy + s * 0.55, cy + s * 0.55, cy + s * 0.1,
+                 cy - s * 0.75, cy - s * 0.75], color=c, lw=0.9, zorder=4)
+        ax.plot([cx + 0.05 * s, cx + 0.5 * s], [cy + s * 0.55, cy + s * 0.1],
+                color=c, lw=0.7, zorder=4)
+        ax.add_patch(plt.Rectangle((cx - 0.02 * s, cy - s * 0.45), s * 0.34, s * 0.3,
+                                   fill=False, edgecolor=c, lw=0.8, zorder=4))
+        ax.add_patch(mpatches.Arc((cx + 0.15 * s, cy - s * 0.15), s * 0.24, s * 0.24,
+                             theta1=0, theta2=180, edgecolor=c, lw=0.8, zorder=4))
+
+    def ic_house(cx, cy, s, c):
+        ax.add_patch(plt.Polygon([(cx - s * 0.75, cy - s * 0.75), (cx - s * 0.75, cy + s * 0.05),
+                                  (cx, cy + s * 0.75), (cx + s * 0.75, cy + s * 0.05),
+                                  (cx + s * 0.75, cy - s * 0.75)], closed=True,
+                                 fill=False, edgecolor=c, lw=0.9, zorder=4))
+        ax.plot([cx], [cy - s * 0.05], marker="o", ms=2.0, color=c, zorder=4)
+        for ang in (45, 135, 225, 315):
+            dx = 0.42 * s * np.cos(np.deg2rad(ang)); dy = 0.42 * s * np.sin(np.deg2rad(ang))
+            ax.plot([cx + dx * 0.45, cx + dx], [cy - s * 0.05 + dy * 0.45, cy - s * 0.05 + dy],
+                    color=c, lw=0.7, zorder=4)
+
+    def ic_folderlock(cx, cy, s, c):
+        ax.plot([cx - s * 0.75, cx - s * 0.75, cx - s * 0.3, cx - s * 0.15, cx + s * 0.75,
+                 cx + s * 0.75, cx - s * 0.75],
+                [cy - s * 0.55, cy + s * 0.55, cy + s * 0.55, cy + s * 0.35, cy + s * 0.35,
+                 cy - s * 0.55, cy - s * 0.55], color=c, lw=0.9, zorder=4)
+        ax.add_patch(plt.Rectangle((cx - s * 0.18, cy - s * 0.35), s * 0.4, s * 0.34,
+                                   fill=False, edgecolor=c, lw=0.8, zorder=4))
+        ax.add_patch(mpatches.Arc((cx, cy - s * 0.01), s * 0.26, s * 0.26,
+                             theta1=0, theta2=180, edgecolor=c, lw=0.8, zorder=4))
+
+    def ic_redx(cx, cy, s, c):
+        ax.plot([cx - s * 0.6, cx + s * 0.6], [cy - s * 0.6, cy + s * 0.6],
+                color=CRIM, lw=1.6, zorder=4, solid_capstyle="round")
+        ax.plot([cx - s * 0.6, cx + s * 0.6], [cy + s * 0.6, cy - s * 0.6],
+                color=CRIM, lw=1.6, zorder=4, solid_capstyle="round")
+
+    def _cyl(cx, cy, s, c):
+        ax.add_patch(plt.Rectangle((cx - s * 0.6, cy - s * 0.5), s * 1.2, s * 1.0,
+                                   fill=False, edgecolor=c, lw=0.9, zorder=4))
+        ax.add_patch(mpatches.Ellipse((cx, cy + s * 0.5), s * 1.2, s * 0.42,
+                                 fill=False, edgecolor=c, lw=0.9, zorder=4))
+        ax.add_patch(mpatches.Arc((cx, cy - s * 0.5), s * 1.2, s * 0.42,
+                             theta1=180, theta2=360, edgecolor=c, lw=0.9, zorder=4))
+
+    def ic_dbopen(cx, cy, s, c):
+        _cyl(cx, cy, s, c)
+        for yy in (cy + s * 0.1, cy - s * 0.2):
+            ax.add_patch(mpatches.Arc((cx, yy), s * 1.2, s * 0.42, theta1=20,
+                                 theta2=160, edgecolor=c, lw=0.6, zorder=4))
+
+    def ic_dbkey(cx, cy, s, c):
+        _cyl(cx, cy, s, c)
+        ax.add_patch(plt.Rectangle((cx + s * 0.15, cy - s * 0.62), s * 0.42, s * 0.34,
+                                   fill=False, edgecolor=c, lw=0.8, zorder=5))
+        ax.add_patch(mpatches.Arc((cx + s * 0.36, cy - s * 0.28), s * 0.3, s * 0.3,
+                             theta1=0, theta2=180, edgecolor=c, lw=0.8, zorder=5))
+
+    def ic_dbcheck(cx, cy, s, c):
+        _cyl(cx, cy, s, c)
+        ax.plot([cx - s * 0.35, cx - s * 0.08, cx + s * 0.42],
+                [cy - s * 0.05, cy - s * 0.38, cy + s * 0.25],
+                color=c, lw=1.2, zorder=5, solid_capstyle="round")
+
+    ICON_FN = {"drop": ic_drop, "flask": ic_flask, "gov": ic_gov, "server": ic_server,
+               "globe": ic_globe, "doclock": ic_doclock, "house": ic_house,
+               "folderlock": ic_folderlock, "redx": ic_redx, "dbopen": ic_dbopen,
+               "dbkey": ic_dbkey, "dbcheck": ic_dbcheck}
 
     for ri, m in enumerate(rows):
         yc = row_y[ri]
         y0 = yc - row_h / 2
-        # row separator (above rows 4..) and proposed bracket
         if ri == 4:
-            ax.plot([0.5, 99.5], [yc + row_h / 2 + 3.4, yc + row_h / 2 + 3.4],
-                    color=DGREEN, lw=0.7, linestyle=(0, (4, 2)))
-            ax.text(99.0, yc + row_h / 2 + 4.6, "proposed architecture", fontsize=5.2,
+            sep = y0 + row_h + 2.9
+            ax.plot([0.5, 99.5], [sep, sep], color=DGREEN, lw=0.8, linestyle=(0, (4, 2)))
+            ax.text(99.0, sep + 0.8, "proposed architecture", fontsize=5.4,
                     color=DGREEN, ha="right", va="bottom", style="italic")
         # number chip + name
-        ax.add_patch(FancyBboxPatch((1.0, y0 + 2.2), 3.6, row_h - 4.4,
+        ax.add_patch(FancyBboxPatch((1.0, y0 + 2.0), 3.6, row_h - 4.0,
                                     boxstyle="round,pad=0.3,rounding_size=0.9",
                                     fc=m["col"], ec=m["col"], lw=0.8))
         ax.text(2.8, yc, m["num"], fontsize=6.5, fontweight="bold", color="white",
                 ha="center", va="center", zorder=5)
-        ax.text(5.8, yc + 1.2, m["name"], fontsize=4.9, va="center", ha="left",
+        ax.text(5.6, yc + 1.0, m["name"], fontsize=5.1, va="center", ha="left",
                 color="#222222", linespacing=1.35)
-        # nodes + arrows
-        for ni, (label, fc) in enumerate(m["nodes"]):
+        # stage nodes: icon above label
+        for ni, (lab, fc) in enumerate(zip(m["labels"], m["fills"])):
             x0 = xs_left[ni]; w = widths[ni]
-            lw = 1.1 if (ri == 2 and ni == 2) else 0.7
+            lw = 1.2 if (ri == 2 and ni == 2) else 0.7
             ax.add_patch(FancyBboxPatch((x0, y0), w, row_h,
                                         boxstyle="round,pad=0.3,rounding_size=1.1",
                                         fc=fc, ec=m["col"], lw=lw, zorder=2))
-            ax.text(x0 + w / 2, yc, label, fontsize=4.6, ha="center", va="center",
-                    color="#222222", zorder=4, linespacing=1.35)
-            if ni == 2 and ri == 2:
-                ax.text(x0 + w / 2, y0 - 1.9, "single national gateway", fontsize=4.4,
-                        ha="center", va="top", color=RED, style="italic", zorder=4)
-            if ni < len(m["nodes"]) - 1:
+            cx = x0 + w / 2
+            ICON_FN[m["icons"][ni]](cx, yc + row_h * 0.22, w * 0.36, m["col"])
+            ax.text(cx, y0 + 2.5, lab, fontsize=4.1, ha="center", va="center",
+                    color="#222222", zorder=4, linespacing=1.25)
+            if ri == 2 and ni == 2:
+                ax.text(cx, y0 - 1.9, "single national gateway", fontsize=4.4,
+                        ha="center", va="top", color=CRIM, style="italic", zorder=4)
+            if ni < 3:
                 x1 = x0 + w
                 x2 = xs_left[ni + 1]
                 ax.annotate("", xy=(x2 - 0.4, yc), xytext=(x1 + 0.4, yc),
                             arrowprops=dict(arrowstyle="-|>", color="#888888", lw=0.8),
                             zorder=1)
-        fl = m["flow_labels"]
-        if fl[3] == "X":
-            ax.text(88.2, yc, "\u00d7", fontsize=12, fontweight="bold", color=BROWN,
-                    ha="center", va="center", zorder=5)
-        # right column
-        ax.text(91.0, yc, m["right"], fontsize=4.7, va="center", ha="left",
-                color=m["rcol"], linespacing=1.4,
-                fontweight="bold" if ri == 2 else "normal")
+        # right callout box
+        ax.add_patch(FancyBboxPatch((CB_X, y0), CB_W, row_h,
+                                    boxstyle="round,pad=0.3,rounding_size=1.1",
+                                    fc="white", ec=m["col"], lw=0.8, zorder=2))
+        ax.text(CB_X + CB_W / 2, y0 + row_h - 2.6, m["metrics"], fontsize=3.9,
+                ha="center", va="center", color="#333333", linespacing=1.3, zorder=4)
+        ax.text(CB_X + CB_W / 2, y0 + 4.1, m["outcome"], fontsize=5.0,
+                ha="center", va="center", color=m["col"], fontweight="bold", zorder=4)
+        # badges
+        bx0 = CB_X + CB_W / 2 - 3.4
+        for bi, (letter_, code) in enumerate(zip(["O", "V", "E"], m["badges"])):
+            bxc = bx0 + bi * 3.4
+            ax.add_patch(plt.Circle((bxc, y0 + 1.6), 1.15, fc=BADGE[code],
+                                    ec="white", lw=0.5, zorder=5))
+            ax.text(bxc, y0 + 1.6, letter_, fontsize=3.6, ha="center", va="center",
+                    color="white", fontweight="bold", zorder=6)
+        ax.annotate("", xy=(CB_X - 0.4, yc), xytext=(66.5 + widths[3] + 0.4, yc),
+                    arrowprops=dict(arrowstyle="-|>", color="#888888", lw=0.8), zorder=1)
 
-    ax.text(11.5, 97.5, "DATA-FLOW ARCHITECTURE", fontsize=5.4, color="#555555",
+    ax.text(13.0, 97.6, "DATA-FLOW ARCHITECTURE", fontsize=5.4, color="#555555",
             va="center", style="italic")
-    ax.text(99.0, 97.5, "GLOBAL PUBLIC ARCHIVE", fontsize=5.4, color="#555555",
+    ax.text(99.0, 97.6, "AUDIT METRICS AND ASSESSMENT", fontsize=5.4, color="#555555",
             va="center", ha="right", style="italic")
+    # bottom legend
+    ly = 4.2
+    ax.text(1.0, ly + 2.2, "Badges:  O = openness   V = velocity   E = equity",
+            fontsize=4.6, color="#222222", va="center")
+    lx = 1.0
+    for code, lab in [("g", "favourable"), ("a", "intermediate"),
+                      ("r", "unfavourable"), ("n", "not applicable")]:
+        ax.add_patch(plt.Circle((lx, ly), 1.05, fc=BADGE[code], ec="white", lw=0.5))
+        ax.text(lx + 1.7, ly, lab, fontsize=4.4, color="#333333", va="center")
+        lx += 1.7 + len(lab) * 0.95 + 3.2
     save(fig, "NM_Fig4")
     print("fig4 done in %.1fs" % (time.time() - t0))
 
