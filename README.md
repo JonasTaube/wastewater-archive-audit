@@ -46,11 +46,21 @@ entities (UMIC presence OR 0.032 vs HIC at equal mortality and population).
 Python 3.13; `pandas`, `numpy`, `scipy`, `matplotlib`, `requests`, `statsmodels`, `lifelines`.
 `pip install -r requirements.txt`
 
-## Data
+## Data (included in this repository)
 
-The full audited record-level tables (SARS-CoV-2 census, non-SARS pathogen census,
-metagenome random sample) are deposited on Zenodo (DOI minted on acceptance). Source
-records are publicly accessible through NCBI BioSample.
+All audited record-level tables are openly available under [`data/`](data/):
+
+| File | Content | Records |
+|---|---|---|
+| `data/master_biosample.csv` | SARS-CoV-2 wastewater census with country attributions | 82,757 |
+| `data/multipathogen_biosample.csv` | Non-SARS pathogen census (influenza A/B, norovirus, rotavirus A, RSV) | 1,426 |
+| `data/metagenome_sample.csv` | Wastewater-metagenome random sample | 3,000 of 373,151 |
+| `data/who_covid_global.csv` | WHO COVID-19 mortality series (burden linkage) | 239 entities |
+| `data/burden_country.csv` | Country-level burden linkage | 20 contributors |
+| `data/country_stats.csv` / `data/misalignment_matrix.csv` | Attribution statistics / flow matrix | — |
+
+Verification results are under [`results/`](results/). Source records are publicly accessible
+through NCBI BioSample; a Zenodo DOI archive is minted on acceptance.
 
 ## Licence
 
