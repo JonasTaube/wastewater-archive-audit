@@ -1,0 +1,470 @@
+{
+  "ascertained": "2026-11-02",
+  "meta_population": 373151,
+  "meta_sampled": 3000,
+  "pathogen_layers": {
+    "influenza_a": {
+      "label": "Influenza A virus",
+      "n": 981,
+      "n_sample_countries": 4,
+      "top_sample_countries": [
+        [
+          "USA",
+          791
+        ],
+        [
+          "CAN",
+          75
+        ],
+        [
+          "FRA",
+          70
+        ],
+        [
+          "missing",
+          45
+        ]
+      ],
+      "top_owner_countries": [
+        [
+          "USA",
+          791
+        ],
+        [
+          "CAN",
+          75
+        ],
+        [
+          "FRA",
+          70
+        ],
+        [
+          "CHN",
+          45
+        ]
+      ],
+      "hub_ebi_share_pct": 0.0,
+      "income_distribution": {
+        "HIC": 936,
+        "unknown": 45
+      },
+      "aligned_pct": 95.4,
+      "n_valid_lag": 981,
+      "median_lag_days": 177,
+      "p90_lag_days": 526,
+      "submission_year_range": [
+        2024,
+        2026
+      ],
+      "submission_year_distribution": {
+        "2024": 19,
+        "2025": 258,
+        "2026": 704
+      }
+    },
+    "influenza_b": {
+      "label": "Influenza B virus",
+      "n": 69,
+      "n_sample_countries": 1,
+      "top_sample_countries": [
+        [
+          "USA",
+          69
+        ]
+      ],
+      "top_owner_countries": [
+        [
+          "USA",
+          69
+        ]
+      ],
+      "hub_ebi_share_pct": 0.0,
+      "income_distribution": {
+        "HIC": 69
+      },
+      "aligned_pct": 100.0,
+      "n_valid_lag": 69,
+      "median_lag_days": 134,
+      "p90_lag_days": 178,
+      "submission_year_range": [
+        2025,
+        2025
+      ],
+      "submission_year_distribution": {
+        "2025": 69
+      }
+    },
+    "norovirus": {
+      "label": "Norovirus",
+      "n": 368,
+      "n_sample_countries": 6,
+      "top_sample_countries": [
+        [
+          "Australia",
+          108
+        ],
+        [
+          "FRA",
+          100
+        ],
+        [
+          "Japan",
+          83
+        ],
+        [
+          "not applicable",
+          68
+        ],
+        [
+          "CHN",
+          8
+        ],
+        [
+          "NLD",
+          1
+        ]
+      ],
+      "top_owner_countries": [
+        [
+          "AUS",
+          176
+        ],
+        [
+          "FRA",
+          84
+        ],
+        [
+          "JPN",
+          83
+        ],
+        [
+          "GBR",
+          17
+        ],
+        [
+          "(unresolved)",
+          8
+        ]
+      ],
+      "hub_ebi_share_pct": 4.62,
+      "income_distribution": {
+        "unknown": 259,
+        "HIC": 101,
+        "UMIC": 8
+      },
+      "aligned_pct": 23.3,
+      "n_valid_lag": 343,
+      "median_lag_days": 1058,
+      "p90_lag_days": 1979,
+      "submission_year_range": [
+        2015,
+        2026
+      ],
+      "submission_year_distribution": {
+        "2015": 32,
+        "2017": 87,
+        "2018": 32,
+        "2019": 16,
+        "2024": 108,
+        "2025": 8,
+        "2026": 85
+      }
+    },
+    "rotavirus_a": {
+      "label": "Rotavirus A",
+      "n": 5,
+      "n_sample_countries": 1,
+      "top_sample_countries": [
+        [
+          "Japan",
+          5
+        ]
+      ],
+      "top_owner_countries": [
+        [
+          "JPN",
+          5
+        ]
+      ],
+      "hub_ebi_share_pct": 0.0,
+      "income_distribution": {
+        "unknown": 5
+      },
+      "aligned_pct": 0.0,
+      "n_valid_lag": 5,
+      "median_lag_days": 1726,
+      "p90_lag_days": 2090,
+      "submission_year_range": [
+        2018,
+        2018
+      ],
+      "submission_year_distribution": {
+        "2018": 5
+      }
+    },
+    "rsv": {
+      "label": "RSV",
+      "n": 3,
+      "n_sample_countries": 2,
+      "top_sample_countries": [
+        [
+          "CAN",
+          2
+        ],
+        [
+          "USA",
+          1
+        ]
+      ],
+      "top_owner_countries": [
+        [
+          "CAN",
+          3
+        ]
+      ],
+      "hub_ebi_share_pct": 0.0,
+      "income_distribution": {
+        "HIC": 3
+      },
+      "aligned_pct": 66.7,
+      "n_valid_lag": 3,
+      "median_lag_days": 639,
+      "p90_lag_days": 640,
+      "submission_year_range": [
+        2024,
+        2024
+      ],
+      "submission_year_distribution": {
+        "2024": 3
+      }
+    }
+  },
+  "pathogen_all": {
+    "label": "all pathogen (non-SARS-CoV-2)",
+    "n": 1426,
+    "n_sample_countries": 9,
+    "top_sample_countries": [
+      [
+        "USA",
+        861
+      ],
+      [
+        "FRA",
+        170
+      ],
+      [
+        "Australia",
+        108
+      ],
+      [
+        "Japan",
+        88
+      ],
+      [
+        "CAN",
+        77
+      ],
+      [
+        "not applicable",
+        68
+      ],
+      [
+        "missing",
+        45
+      ],
+      [
+        "CHN",
+        8
+      ],
+      [
+        "NLD",
+        1
+      ]
+    ],
+    "top_owner_countries": [
+      [
+        "USA",
+        860
+      ],
+      [
+        "AUS",
+        176
+      ],
+      [
+        "FRA",
+        154
+      ],
+      [
+        "JPN",
+        88
+      ],
+      [
+        "CAN",
+        78
+      ],
+      [
+        "CHN",
+        45
+      ],
+      [
+        "GBR",
+        17
+      ],
+      [
+        "(unresolved)",
+        8
+      ]
+    ],
+    "hub_ebi_share_pct": 1.19,
+    "income_distribution": {
+      "HIC": 1109,
+      "unknown": 309,
+      "UMIC": 8
+    },
+    "aligned_pct": 76.9,
+    "n_valid_lag": 1401,
+    "median_lag_days": 197,
+    "p90_lag_days": 1278,
+    "submission_year_range": [
+      2015,
+      2026
+    ],
+    "submission_year_distribution": {
+      "2015": 32,
+      "2017": 87,
+      "2018": 37,
+      "2019": 16,
+      "2024": 130,
+      "2025": 335,
+      "2026": 789
+    }
+  },
+  "metagenome_sample": {
+    "label": "wastewater metagenome (sample)",
+    "n": 3000,
+    "n_sample_countries": 57,
+    "top_sample_countries": [
+      [
+        "USA",
+        1874
+      ],
+      [
+        "DNK",
+        252
+      ],
+      [
+        "CHN",
+        100
+      ],
+      [
+        "HKG",
+        98
+      ],
+      [
+        "NLD",
+        76
+      ],
+      [
+        "CHE",
+        76
+      ],
+      [
+        "GBR",
+        72
+      ],
+      [
+        "CAN",
+        61
+      ],
+      [
+        "IND",
+        55
+      ],
+      [
+        "ITA",
+        55
+      ]
+    ],
+    "top_owner_countries": [
+      [
+        "USA",
+        1537
+      ],
+      [
+        "GBR",
+        639
+      ],
+      [
+        "(unresolved)",
+        512
+      ],
+      [
+        "DNK",
+        86
+      ],
+      [
+        "CHN",
+        57
+      ],
+      [
+        "CAN",
+        52
+      ],
+      [
+        "IND",
+        42
+      ],
+      [
+        "FRA",
+        15
+      ],
+      [
+        "ISR",
+        10
+      ],
+      [
+        "HKG",
+        9
+      ]
+    ],
+    "hub_ebi_share_pct": 19.77,
+    "income_distribution": {
+      "HIC": 2636,
+      "unknown": 195,
+      "LMIC": 55,
+      "UMIC": 113
+    },
+    "aligned_pct": 73.8,
+    "n_valid_lag": 2576,
+    "median_lag_days": 267,
+    "p90_lag_days": 1706,
+    "submission_year_range": [
+      2014,
+      2026
+    ],
+    "submission_year_distribution": {
+      "2014": 7,
+      "2015": 13,
+      "2016": 7,
+      "2017": 9,
+      "2018": 19,
+      "2019": 29,
+      "2020": 56,
+      "2021": 109,
+      "2022": 277,
+      "2023": 535,
+      "2024": 742,
+      "2025": 467,
+      "2026": 730
+    },
+    "extrapolated_total": 373151,
+    "sovereign_domestic_share_pct": 61.17
+  },
+  "panorama": {
+    "sars_cov_2_pathogen": 82757,
+    "other_pathogen": 1426,
+    "metagenome_total": 373151,
+    "total_wastewater_records": 457334,
+    "note": "metagenome layer is 4.5x the pathogen layer - the archive's largest stratum"
+  }
+}
