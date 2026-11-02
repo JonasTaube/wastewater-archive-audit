@@ -1,0 +1,425 @@
+{
+  "total_samples": 82757,
+  "aligned_same_country_pct": 61.1,
+  "misaligned_cross_country_pct": 38.8,
+  "owner_unresolved_pct": 0.0,
+  "geo_missing_pct": 0.1,
+  "proxy_hub_submission_n": 81813,
+  "proxy_hub_submission_pct": 98.9,
+  "ebi_single_hub_pct": 98.9,
+  "gini_country_concentration": -0.869,
+  "hhi": 0.417,
+  "top3_country_share_pct": 90.9,
+  "n_sample_countries": 20,
+  "income_group_distribution": {
+    "UMIC": 20,
+    "unknown": 867,
+    "LMIC": 311,
+    "HIC": 81396,
+    "LIC": 79
+  },
+  "lmic_umic_lic_total_samples": 410,
+  "lmic_umic_lic_pct": 0.5,
+  "top30_misaligned_pairs": [
+    {
+      "sampled": "NLD",
+      "submitted_by": "GBR",
+      "n": 17405
+    },
+    {
+      "sampled": "DNK",
+      "submitted_by": "GBR",
+      "n": 8108
+    },
+    {
+      "sampled": "AUT",
+      "submitted_by": "GBR",
+      "n": 3497
+    },
+    {
+      "sampled": "CHE",
+      "submitted_by": "GBR",
+      "n": 1765
+    },
+    {
+      "sampled": "SVN",
+      "submitted_by": "GBR",
+      "n": 616
+    },
+    {
+      "sampled": "Sweden",
+      "submitted_by": "GBR",
+      "n": 220
+    },
+    {
+      "sampled": "NOR",
+      "submitted_by": "GBR",
+      "n": 214
+    },
+    {
+      "sampled": "USA",
+      "submitted_by": "GBR",
+      "n": 158
+    },
+    {
+      "sampled": "LIE",
+      "submitted_by": "GBR",
+      "n": 31
+    },
+    {
+      "sampled": "FRA",
+      "submitted_by": "GBR",
+      "n": 29
+    },
+    {
+      "sampled": "ITA",
+      "submitted_by": "GBR",
+      "n": 24
+    },
+    {
+      "sampled": "DEU",
+      "submitted_by": "GBR",
+      "n": 22
+    },
+    {
+      "sampled": "CHL",
+      "submitted_by": "CAN",
+      "n": 9
+    },
+    {
+      "sampled": "PER",
+      "submitted_by": "USA",
+      "n": 1
+    }
+  ],
+  "country_stats_top40": [
+    {
+      "sample_country": "GBR",
+      "income_group": "HIC",
+      "n_samples": 49646,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 0,
+      "misalignment_rate_pct": 0.0,
+      "foreign_submission_rate_pct": 0.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          49646
+        ]
+      ],
+      "median_lag_days": 573
+    },
+    {
+      "sample_country": "NLD",
+      "income_group": "HIC",
+      "n_samples": 17405,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 17405,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          17405
+        ]
+      ],
+      "median_lag_days": 1120
+    },
+    {
+      "sample_country": "DNK",
+      "income_group": "HIC",
+      "n_samples": 8108,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 8108,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          8108
+        ]
+      ],
+      "median_lag_days": 788
+    },
+    {
+      "sample_country": "AUT",
+      "income_group": "HIC",
+      "n_samples": 3497,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 3497,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          3497
+        ]
+      ],
+      "median_lag_days": 311
+    },
+    {
+      "sample_country": "CHE",
+      "income_group": "HIC",
+      "n_samples": 1765,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 1765,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          1765
+        ]
+      ],
+      "median_lag_days": 351
+    },
+    {
+      "sample_country": "SVN",
+      "income_group": "unknown",
+      "n_samples": 616,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 616,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          616
+        ]
+      ],
+      "median_lag_days": 621
+    },
+    {
+      "sample_country": "USA",
+      "income_group": "HIC",
+      "n_samples": 563,
+      "n_distinct_owner_countries": 2,
+      "misaligned_n": 158,
+      "misalignment_rate_pct": 28.1,
+      "foreign_submission_rate_pct": 28.1,
+      "top3_owner_countries": [
+        [
+          "USA",
+          405
+        ],
+        [
+          "GBR",
+          158
+        ]
+      ],
+      "median_lag_days": 104
+    },
+    {
+      "sample_country": "IND",
+      "income_group": "LMIC",
+      "n_samples": 311,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 0,
+      "misalignment_rate_pct": 0.0,
+      "foreign_submission_rate_pct": 0.0,
+      "top3_owner_countries": [
+        [
+          "IND",
+          311
+        ]
+      ],
+      "median_lag_days": 330
+    },
+    {
+      "sample_country": "Sweden",
+      "income_group": "unknown",
+      "n_samples": 220,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 220,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          220
+        ]
+      ],
+      "median_lag_days": 262
+    },
+    {
+      "sample_country": "NOR",
+      "income_group": "HIC",
+      "n_samples": 214,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 214,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          214
+        ]
+      ],
+      "median_lag_days": 758
+    },
+    {
+      "sample_country": "FRA",
+      "income_group": "HIC",
+      "n_samples": 147,
+      "n_distinct_owner_countries": 2,
+      "misaligned_n": 29,
+      "misalignment_rate_pct": 19.7,
+      "foreign_submission_rate_pct": 19.7,
+      "top3_owner_countries": [
+        [
+          "FRA",
+          118
+        ],
+        [
+          "GBR",
+          29
+        ]
+      ],
+      "median_lag_days": 225
+    },
+    {
+      "sample_country": "ETH",
+      "income_group": "LIC",
+      "n_samples": 79,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 0,
+      "misalignment_rate_pct": 0.0,
+      "foreign_submission_rate_pct": 0.0,
+      "top3_owner_countries": [
+        [
+          "ETH",
+          79
+        ]
+      ],
+      "median_lag_days": 672
+    },
+    {
+      "sample_country": "LIE",
+      "income_group": "unknown",
+      "n_samples": 31,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 31,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          31
+        ]
+      ],
+      "median_lag_days": 405
+    },
+    {
+      "sample_country": "ITA",
+      "income_group": "HIC",
+      "n_samples": 24,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 24,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          24
+        ]
+      ],
+      "median_lag_days": null
+    },
+    {
+      "sample_country": "DEU",
+      "income_group": "HIC",
+      "n_samples": 22,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 22,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "GBR",
+          22
+        ]
+      ],
+      "median_lag_days": null
+    },
+    {
+      "sample_country": "URY",
+      "income_group": "UMIC",
+      "n_samples": 10,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 0,
+      "misalignment_rate_pct": 0.0,
+      "foreign_submission_rate_pct": 0.0,
+      "top3_owner_countries": [
+        [
+          "URY",
+          10
+        ]
+      ],
+      "median_lag_days": 483
+    },
+    {
+      "sample_country": "CHL",
+      "income_group": "UMIC",
+      "n_samples": 9,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 9,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "CAN",
+          9
+        ]
+      ],
+      "median_lag_days": null
+    },
+    {
+      "sample_country": "ESP",
+      "income_group": "HIC",
+      "n_samples": 3,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 0,
+      "misalignment_rate_pct": 0.0,
+      "foreign_submission_rate_pct": 0.0,
+      "top3_owner_countries": [
+        [
+          "ESP",
+          3
+        ]
+      ],
+      "median_lag_days": 289
+    },
+    {
+      "sample_country": "CAN",
+      "income_group": "HIC",
+      "n_samples": 2,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 0,
+      "misalignment_rate_pct": 0.0,
+      "foreign_submission_rate_pct": 0.0,
+      "top3_owner_countries": [
+        [
+          "CAN",
+          2
+        ]
+      ],
+      "median_lag_days": 139
+    },
+    {
+      "sample_country": "PER",
+      "income_group": "UMIC",
+      "n_samples": 1,
+      "n_distinct_owner_countries": 1,
+      "misaligned_n": 1,
+      "misalignment_rate_pct": 100.0,
+      "foreign_submission_rate_pct": 100.0,
+      "top3_owner_countries": [
+        [
+          "USA",
+          1
+        ]
+      ],
+      "median_lag_days": 205
+    }
+  ]
+}
