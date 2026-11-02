@@ -1,0 +1,30 @@
+{
+  "pathogens": {
+    "influenza_a": {
+      "count": 981,
+      "fetched": 981
+    },
+    "influenza_b": {
+      "count": 69,
+      "fetched": 69
+    },
+    "norovirus": {
+      "count": 368,
+      "fetched": 368
+    },
+    "rotavirus_a": {
+      "count": 5,
+      "fetched": 5
+    },
+    "rsv": {
+      "count": 3,
+      "fetched": 3
+    }
+  },
+  "metagenome": {
+    "total_population": 373151,
+    "sample_n": 3000,
+    "fetched": 3000
+  },
+  "ascertained": "2026-11-02"
+}
