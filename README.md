@@ -1,38 +1,57 @@
 # wastewater-archive-audit
 
-Code accompanying the Article *"A single national gateway: a global audit of the public
-wastewater sequencing archive reveals an inequitable submission architecture misaligned
-with disease burden"* (Tianxi Yu, 2026).
+Code accompanying the Article *"Same sewers, different sovereignty: a stratified audit of
+457,334 public wastewater sequencing records shows submission architecture - not capacity,
+income, or disease burden - shapes the global archive"* (Tianxi Yu et al., 2026; v2 of the
+single-gateway audit).
 
-The audit is a complete census of all 82,757 SARS-CoV-2 wastewater sequencing records in
-the NCBI BioSample archive (ascertained 15 September 2026), attributing every record to
-its submitting institution and submission pathway, and linking the result to WHO COVID-19
-mortality data.
+## What the audit measures
+
+Three strata of the public INSDC wastewater record:
+
+| Stratum | Records | Method | EBI gateway | Domestic accounts | Countries |
+|---|---|---|---|---|---|
+| SARS-CoV-2 wastewater | 82,757 | complete census (2026-09-15) | 98.9% | 1.1% | 20 |
+| Other pathogen targets (influenza A/B, norovirus, rotavirus A, RSV) | 1,426 | complete census (2026-11-02) | 1.2% | 76.5% | 9 |
+| Wastewater metagenome | 373,151 | uniform random sample, n=3,000 (2026-11-02) | 19.8% | 60.7% | 57 |
+
+Key statistical upgrades in v2: Cox proportional-hazards model of submission velocity
+(hub-routed HR 0.093, 95% CI 0.085-0.101) and a two-part presence model over 213 WHO
+entities (UMIC presence OR 0.032 vs HIC at equal mortality and population).
 
 ## Pipeline
 
 | Script | Purpose |
 |---|---|
-| `fetch_pilot.py` | Pilot retrieval: NCBI E-utilities esearch/efetch query formulation and union sensitivity query (wastewater/sewage/sewer/sludge). |
-| `fetch_full.py` | Full retrieval of all records (accession, Owner, submission date, geo location, collection date, organism, isolation source, BioProject). |
-| `map_analyze.py` | Country attribution (three-tier rule system: transnational database proxies; curated institution dictionary; city-to-country dictionary) and core descriptive statistics. |
-| `burden_analysis.py` | Linkage to the WHO COVID-19 Dashboard cumulative mortality series; burden-normalised intensity and representation-mismatch ratios. |
-| `reconcile_and_burden.py` | Flow reconciliation of all 82,757 records across pools; two-level burden analysis (all 239 WHO entities and 20 contributing countries); back-filling sensitivity analyses. |
-| `owner_semantics_check.py` | Verification of BioSample Owner semantics: 300-record random sample checked against the ENA submission registry (centre names). |
+| `fetch_pilot.py` | Pilot retrieval: query formulation and union sensitivity query (wastewater/sewage/sewer/sludge). |
+| `fetch_full.py` | Full retrieval of all SARS-CoV-2 records (accession, Owner, submission date, geo location, collection date, organism, isolation source, BioProject). |
+| `fetch_multipathogen.py` | **v2:** full retrieval of the non-SARS pathogen census (5 organisms) and the 3,000-record random sample of the 373,151-record wastewater metagenome stratum. |
+| `map_analyze.py` | Country attribution (three-tier rule system) and core descriptive statistics for the SARS-CoV-2 stratum. |
+| `analyze_multipathogen.py` | **v2:** stratified analysis of the non-SARS pathogen and metagenome strata (extended institution dictionary: NWSS, state public-health laboratories, Guangdong CDC, Aalborg, etc.). |
+| `burden_analysis.py` | Linkage to the WHO COVID-19 Dashboard cumulative mortality series. |
+| `reconcile_and_burden.py` | Flow reconciliation across pools; two-level burden analysis; back-filling sensitivity. |
+| `upgrade_stats.py` | **v2:** Cox proportional-hazards velocity model (lifelines) and two-part presence model (statsmodels, World Bank covariates). |
+| `owner_semantics_check.py` | Verification of BioSample Owner semantics against the ENA submission registry. |
 | `make_figures_nm.py` | Figure rendering (matplotlib, Arial, 300 dpi, PDF fonttype 42). |
 | `resolve_nm_refs.py` | Reference list resolution and citation-continuity checks. |
 
+## Results (JSON)
+
+- `multipathogen_fetch.json` - stratum ascertainment counts and sampling design.
+- `multipathogen_analysis.json` - stratified custody/lag/income analysis for strata 2 and 3.
+- `stats_upgrade.json` - Cox model and two-part presence model estimates.
+
 ## Requirements
 
-Python 3.13; `pandas`, `numpy`, `scipy`, `matplotlib`, `requests`.
+Python 3.13; `pandas`, `numpy`, `scipy`, `matplotlib`, `requests`, `statsmodels`, `lifelines`.
 `pip install -r requirements.txt`
 
 ## Data
 
-The full audited record-level table (Supplementary Data 1) is deposited on Zenodo
-(DOI minted on acceptance). Source records are publicly accessible through NCBI
-BioSample under the BioProject accessions listed in that table.
+The full audited record-level tables (SARS-CoV-2 census, non-SARS pathogen census,
+metagenome random sample) are deposited on Zenodo (DOI minted on acceptance). Source
+records are publicly accessible through NCBI BioSample.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
