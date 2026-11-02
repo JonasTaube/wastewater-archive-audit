@@ -1,0 +1,279 @@
+{
+ "flow": {
+  "total": 82757,
+  "valid_ind_dom": 932,
+  "dom_by_URY": 10,
+  "valid_hub": 78432,
+  "invalid_dates": 3392,
+  "inv_ind": 11,
+  "dom_by_GBR": 6,
+  "dom_by_USA": 405,
+  "inv_hub": 3381,
+  "valid_ind_lmic": 389,
+  "dom_by_ETH": 79,
+  "dom_by_IND": 310,
+  "valid_ind_foreign_owner": 1,
+  "dom_by_CAN": 2,
+  "dom_by_FRA": 118,
+  "dom_by_ESP": 2
+ },
+ "hub_total": 81813,
+ "dom_all": {
+  "URY": 10,
+  "IND": 311,
+  "GBR": 6,
+  "USA": 405,
+  "ETH": 79,
+  "ESP": 3,
+  "CAN": 2,
+  "FRA": 118
+ },
+ "dom_all_sum": 934,
+ "who_rank_top12": [
+  {
+   "rank": 1,
+   "Country": "United States of America",
+   "Country_code": "US",
+   "Cumulative_deaths": 1238930,
+   "records": 563
+  },
+  {
+   "rank": 2,
+   "Country": "Brazil",
+   "Country_code": "BR",
+   "Cumulative_deaths": 704064,
+   "records": 0
+  },
+  {
+   "rank": 3,
+   "Country": "India",
+   "Country_code": "IN",
+   "Cumulative_deaths": 533849,
+   "records": 311
+  },
+  {
+   "rank": 4,
+   "Country": "Russian Federation",
+   "Country_code": "RU",
+   "Cumulative_deaths": 404290,
+   "records": 0
+  },
+  {
+   "rank": 5,
+   "Country": "Mexico",
+   "Country_code": "MX",
+   "Cumulative_deaths": 335141,
+   "records": 0
+  },
+  {
+   "rank": 6,
+   "Country": "United Kingdom of Great Britain and Northern Ireland",
+   "Country_code": "GB",
+   "Cumulative_deaths": 232112,
+   "records": 49646
+  },
+  {
+   "rank": 7,
+   "Country": "Peru",
+   "Country_code": "PE",
+   "Cumulative_deaths": 221072,
+   "records": 1
+  },
+  {
+   "rank": 8,
+   "Country": "Italy",
+   "Country_code": "IT",
+   "Cumulative_deaths": 198523,
+   "records": 24
+  },
+  {
+   "rank": 9,
+   "Country": "Germany",
+   "Country_code": "DE",
+   "Cumulative_deaths": 174979,
+   "records": 22
+  },
+  {
+   "rank": 10,
+   "Country": "France",
+   "Country_code": "FR",
+   "Cumulative_deaths": 168207,
+   "records": 147
+  },
+  {
+   "rank": 11,
+   "Country": "Indonesia",
+   "Country_code": "ID",
+   "Cumulative_deaths": 162059,
+   "records": 0
+  },
+  {
+   "rank": 12,
+   "Country": "Iran (Islamic Republic of)",
+   "Country_code": "IR",
+   "Cumulative_deaths": 146837,
+   "records": 0
+  }
+ ],
+ "n_entities": 239,
+ "all_sample": {
+  "n": 239,
+  "rho": 0.333688777130253,
+  "p": 1.264740286944838e-07
+ },
+ "contributors": {
+  "n": 20,
+  "rho": -0.07669172932330826,
+  "p": 0.74793344754194
+ },
+ "hic": {
+  "n": 17,
+  "rho": -0.08088235294117649,
+  "p": 0.7576329086921563
+ },
+ "peru_rank": 7,
+ "peru_deaths": 221072,
+ "zero_hi": [
+  {
+   "rank": 2,
+   "Country": "Brazil",
+   "Cumulative_deaths": 704064
+  },
+  {
+   "rank": 4,
+   "Country": "Russian Federation",
+   "Cumulative_deaths": 404290
+  },
+  {
+   "rank": 5,
+   "Country": "Mexico",
+   "Cumulative_deaths": 335141
+  },
+  {
+   "rank": 11,
+   "Country": "Indonesia",
+   "Cumulative_deaths": 162059
+  },
+  {
+   "rank": 12,
+   "Country": "Iran (Islamic Republic of)",
+   "Cumulative_deaths": 146837
+  },
+  {
+   "rank": 13,
+   "Country": "Colombia",
+   "Cumulative_deaths": 142824
+  },
+  {
+   "rank": 14,
+   "Country": "Argentina",
+   "Cumulative_deaths": 130859
+  },
+  {
+   "rank": 15,
+   "Country": "China",
+   "Cumulative_deaths": 122398
+  },
+  {
+   "rank": 17,
+   "Country": "Poland",
+   "Cumulative_deaths": 121221
+  },
+  {
+   "rank": 18,
+   "Country": "Ukraine",
+   "Cumulative_deaths": 109937
+  },
+  {
+   "rank": 19,
+   "Country": "South Africa",
+   "Cumulative_deaths": 102595
+  },
+  {
+   "rank": 20,
+   "Country": "T\ufffdrkiye",
+   "Cumulative_deaths": 101419
+  },
+  {
+   "rank": 21,
+   "Country": "Japan",
+   "Cumulative_deaths": 74694
+  },
+  {
+   "rank": 22,
+   "Country": "Romania",
+   "Cumulative_deaths": 69096
+  },
+  {
+   "rank": 23,
+   "Country": "Philippines",
+   "Cumulative_deaths": 66864
+  }
+ ],
+ "mannwhitney": {
+  "U": 3718.0,
+  "p": 2.4514816739436395e-07,
+  "n1": 20,
+  "n0": 219
+ },
+ "sensitivity": [
+  {
+   "label": "full window",
+   "hub_n": 78432,
+   "hub_med": 890.0,
+   "dom_n": 932,
+   "dom_med": 203.0,
+   "H": 1214.3662989218626,
+   "p": 4.60380579875765e-266
+  },
+  {
+   "label": "collected >= 2022",
+   "hub_n": 44500,
+   "hub_med": 896.0,
+   "dom_n": 452,
+   "dom_med": 351.0,
+   "H": 258.3459874503329,
+   "p": 3.9360057390675034e-58
+  },
+  {
+   "label": "lag <= 365d only",
+   "hub_n": 29706,
+   "hub_med": 263.0,
+   "dom_n": 755,
+   "dom_med": 153.0,
+   "H": 381.7251367616708,
+   "p": 5.240516268734256e-85
+  },
+  {
+   "label": "collected >= 2023",
+   "hub_n": 7938,
+   "hub_med": 825.0,
+   "dom_n": 142,
+   "dom_med": 678.5,
+   "H": 87.0451022340852,
+   "p": 1.0607439876958261e-20
+  }
+ ],
+ "hub_by_year": {
+  "2020": [
+   216,
+   524.0
+  ],
+  "2021": [
+   33716,
+   468.0
+  ],
+  "2022": [
+   36562,
+   899.0
+  ],
+  "2023": [
+   7710,
+   836.0
+  ],
+  "2024": [
+   228,
+   52.0
+  ]
+ }
+}
