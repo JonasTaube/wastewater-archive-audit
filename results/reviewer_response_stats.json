@@ -1,0 +1,437 @@
+{
+  "M1_cox_refits": {
+    "A_nowindow": {
+      "n": 82615,
+      "pools": {
+        "hub_routed": 81683,
+        "indep_HIC_dom": 543,
+        "indep_LMIC": 389
+      },
+      "cox": {
+        "pool_hub": {
+          "HR": 0.09307114056245319,
+          "lo": 0.08548402776136656,
+          "hi": 0.10133164560024055,
+          "p": 0.0
+        },
+        "pool_lmic": {
+          "HR": 0.22729095065782828,
+          "lo": 0.19951441119777427,
+          "hi": 0.25893455986860386,
+          "p": 6.121992617561005e-110
+        },
+        "coll_year_c": {
+          "HR": 1.2646714613468009,
+          "lo": 1.2511320048250556,
+          "hi": 1.2783574386850525,
+          "p": 0.0
+        }
+      }
+    },
+    "B_complete_followup": {
+      "n": 71006,
+      "pools": {
+        "hub_routed": 70218,
+        "indep_HIC_dom": 480,
+        "indep_LMIC": 308
+      },
+      "cox": {
+        "pool_hub": {
+          "HR": 0.035586405555458965,
+          "lo": 0.03248638590548048,
+          "hi": 0.03898224517932477,
+          "p": 0.0
+        },
+        "pool_lmic": {
+          "HR": 0.08556570964518916,
+          "lo": 0.0740563307743018,
+          "hi": 0.09886380530245548,
+          "p": 6.026907185867056e-244
+        },
+        "coll_year_c": {
+          "HR": 1.4669739857684578,
+          "lo": 1.444639068080184,
+          "hi": 1.4896542136170092,
+          "p": 0.0
+        }
+      }
+    },
+    "C_original_window": {
+      "n": 79364,
+      "pools": {
+        "hub_routed": 78432,
+        "indep_HIC_dom": 543,
+        "indep_LMIC": 389
+      },
+      "cox": {
+        "pool_hub": {
+          "HR": 0.0929399219426896,
+          "lo": 0.0853630718480303,
+          "hi": 0.10118929536756764,
+          "p": 0.0
+        },
+        "pool_lmic": {
+          "HR": 0.2451543336824917,
+          "lo": 0.21516163955665155,
+          "hi": 0.2793278924958282,
+          "p": 5.81370540704632e-99
+        },
+        "coll_year_c": {
+          "HR": 1.04164971794021,
+          "lo": 1.030065430289078,
+          "hi": 1.0533642844226068,
+          "p": 8.585307251670319e-13
+        }
+      }
+    },
+    "coll_range_A": [
+      "2020",
+      "2024"
+    ],
+    "coll_range_B": [
+      "2020",
+      "2022"
+    ]
+  },
+  "M2_window": {
+    "n_2920": 82615,
+    "equals_nowindow": true
+  },
+  "M3_presence": {
+    "n": 213,
+    "n_events": 20,
+    "firth_full": {
+      "Intercept": {
+        "OR": 0.0030282219147784537,
+        "lo": 5.3109250239643395e-06,
+        "hi": 1.7266536288436343
+      },
+      "log_deaths": {
+        "OR": 2.2605609555353547,
+        "lo": 1.1259782853769325,
+        "hi": 4.538396432734267
+      },
+      "log_pop": {
+        "OR": 0.827314580867519,
+        "lo": 0.3973281589792196,
+        "hi": 1.7226300231889566
+      },
+      "UMIC": {
+        "OR": 0.05303741610966565,
+        "lo": 0.008449232150601067,
+        "hi": 0.3329258159144924
+      },
+      "LMIC": {
+        "OR": 0.23051485753881737,
+        "lo": 0.025154188007826876,
+        "hi": 2.11245537043801
+      },
+      "LIC": {
+        "OR": 1.465605051906379,
+        "lo": 0.0766941279418285,
+        "hi": 28.007335448194006
+      }
+    },
+    "firth_drop_peru": {
+      "Intercept": {
+        "OR": 0.0008744312311553537,
+        "lo": 1.2333879393148336e-06,
+        "hi": 0.6199428044063993
+      },
+      "log_deaths": {
+        "OR": 1.8586006284911762,
+        "lo": 0.9334934955026073,
+        "hi": 3.700503873749966
+      },
+      "log_pop": {
+        "OR": 1.0086367509158887,
+        "lo": 0.4797888149013083,
+        "hi": 2.1204081122804563
+      },
+      "UMIC": {
+        "OR": 0.017308466834156176,
+        "lo": 0.0009582379117594886,
+        "hi": 0.3126395026460586
+      },
+      "LMIC": {
+        "OR": 0.16339082794255166,
+        "lo": 0.016497439196703954,
+        "hi": 1.6182246430758944
+      },
+      "LIC": {
+        "OR": 0.7643791083960211,
+        "lo": 0.039325599657289836,
+        "hi": 14.85738110655837
+      }
+    },
+    "logit_drop_peru": {
+      "Intercept": {
+        "OR": 0.0005219584870175602,
+        "lo": 3.1009308120012847e-07,
+        "hi": 0.8785770424649768
+      },
+      "C(income, Treatment('HIC'))[T.LIC]": {
+        "OR": 0.6536841016667034,
+        "lo": 0.02151185423666456,
+        "hi": 19.863601717954886
+      },
+      "C(income, Treatment('HIC'))[T.LMIC]": {
+        "OR": 0.10892381315408839,
+        "lo": 0.007299097631374005,
+        "hi": 1.6254607995691892
+      },
+      "C(income, Treatment('HIC'))[T.UMIC]": {
+        "OR": 5.089813078366291e-11,
+        "lo": 0.0,
+        "hi": Infinity
+      },
+      "log_deaths": {
+        "OR": 2.0245093295614445,
+        "lo": 0.9152689965137623,
+        "hi": 4.478069333816554
+      },
+      "log_pop": {
+        "OR": 0.9853595770062789,
+        "lo": 0.4214947862370014,
+        "hi": 2.3035480572992153
+      }
+    },
+    "events_by_income": {
+      "HIC": 17,
+      "LIC": 1,
+      "LMIC": 1,
+      "UMIC": 1
+    }
+  },
+  "M4_aft": {
+    "nowindow_weibull": {},
+    "nowindow_lognormal": {},
+    "complete_followup_weibull": {},
+    "complete_followup_lognormal": {}
+  },
+  "M4_rmst": {
+    "nowindow_tau_365": {
+      "indep_HIC_dom": 133.9300184162063,
+      "indep_LMIC": 310.15938303341903,
+      "hub_routed": 323.4827320250237
+    },
+    "nowindow_tau_730": {
+      "indep_HIC_dom": 163.29465930018418,
+      "indep_LMIC": 370.0976863753215,
+      "hub_routed": 545.5576190884275
+    },
+    "nowindow_tau_1095": {
+      "indep_HIC_dom": 165.24677716390428,
+      "indep_LMIC": 370.0976863753215,
+      "hub_routed": 693.8455125301474
+    },
+    "complete_followup_tau_365": {
+      "indep_HIC_dom": 113.675,
+      "indep_LMIC": 297.7175324675326,
+      "hub_routed": 323.61076931840836
+    },
+    "complete_followup_tau_730": {
+      "indep_HIC_dom": 120.61250000000003,
+      "indep_LMIC": 298.53571428571433,
+      "hub_routed": 533.8092227064285
+    },
+    "complete_followup_tau_1095": {
+      "indep_HIC_dom": 120.65625000000003,
+      "indep_LMIC": 298.53571428571433,
+      "hub_routed": 679.1252527841864
+    }
+  },
+  "M5_accounting": {
+    "total": 82757,
+    "pool_all": {
+      "hub_routed": 81813,
+      "indep_HIC_dom": 544,
+      "indep_LMIC": 390,
+      "foreign_indep": 10
+    },
+    "no_geo": 84,
+    "no_geo_by_pool": {
+      "hub_routed": 84
+    },
+    "hub_owned": 81813,
+    "independent": 944,
+    "foreign_attributed": 32099,
+    "foreign_to_GBR": 32089,
+    "valid_pair": 82616,
+    "invalid_pair": 141,
+    "invalid_pair_by_pool": {
+      "hub_routed": 130,
+      "foreign_indep": 9,
+      "indep_LMIC": 1,
+      "indep_HIC_dom": 1
+    },
+    "invalid_missing_both": 0,
+    "invalid_missing_submission": 0,
+    "invalid_missing_collection": 141,
+    "lag_gt_1460": 3251,
+    "lag_le_minus60": 0,
+    "lag_neg_retained": 0,
+    "max_lag": 1677,
+    "min_lag": 8,
+    "orig_velocity_n": 79364,
+    "orig_velocity_pools": {
+      "hub_routed": 78432,
+      "indep_HIC_dom": 543,
+      "indep_LMIC": 389
+    },
+    "foreign_indep_detail": [
+      {
+        "accession": "SAMN43035815",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.497000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035814",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.483000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035813",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.473000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035812",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.460000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035811",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.450000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035810",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.440000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035809",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.417000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035808",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.403000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN43035807",
+        "sample_country": "CHL",
+        "lag": NaN,
+        "sd": "2024-08-05 12:57:07.387000",
+        "cd": "NaT"
+      },
+      {
+        "accession": "SAMN21557915",
+        "sample_country": "PER",
+        "lag": 205.0,
+        "sd": "2021-09-22 21:58:04.640000",
+        "cd": "2021-03-01 00:00:00"
+      }
+    ],
+    "reconcile": {
+      "valid_pair": 82616,
+      "invalid_pair": 141,
+      "window_excluded": 3251,
+      "check": 79364
+    }
+  },
+  "M8_metagenome": {
+    "us_share": 0.6246666666666667,
+    "us_extrapolated": 233094.99133333334,
+    "us_ci_half": 6465.658873663219,
+    "cn_share": 0.03333333333333333,
+    "cn_extrapolated": 12438.366666666667,
+    "cn_ci_half": 2396.9435051912296,
+    "n_countries_meta": 57,
+    "n_countries_multi": 9
+  },
+  "strata23": {
+    "multipathogen": {
+      "n": 1426,
+      "valid_pair": 1402,
+      "invalid_pair": 24,
+      "lag_gt_2920": 1,
+      "lag_le_minus60": 0,
+      "lag_neg_retained": 0,
+      "max_lag": 3351,
+      "pool_all": {
+        "foreign_indep": 1339,
+        "indep_HIC_dom": 70,
+        "hub_routed": 17
+      },
+      "invalid_by_pool": {
+        "hub_routed": 16,
+        "foreign_indep": 8
+      }
+    },
+    "metagenome": {
+      "n": 3000,
+      "valid_pair": 2592,
+      "invalid_pair": 408,
+      "lag_gt_2920": 16,
+      "lag_le_minus60": 0,
+      "lag_neg_retained": 0,
+      "max_lag": 5263,
+      "pool_all": {
+        "foreign_indep": 2371,
+        "hub_routed": 593,
+        "indep_HIC_dom": 26,
+        "indep_LMIC": 10
+      },
+      "invalid_by_pool": {
+        "foreign_indep": 289,
+        "hub_routed": 119
+      }
+    }
+  },
+  "cluster_bootstrap": {
+    "pool_hub": {
+      "p2.5": NaN,
+      "p97.5": NaN,
+      "median": NaN,
+      "n_valid": 1749
+    },
+    "pool_lmic": {
+      "p2.5": NaN,
+      "p97.5": NaN,
+      "median": NaN,
+      "n_valid": 1749
+    },
+    "coll_year_c": {
+      "p2.5": NaN,
+      "p97.5": NaN,
+      "median": NaN,
+      "n_valid": 1749
+    }
+  },
+  "versions": {
+    "lifelines": "0.30.3",
+    "statsmodels": "0.15.0",
+    "scipy": "1.18.1",
+    "numpy": "2.5.2",
+    "pandas": "2.3.3"
+  }
+}
