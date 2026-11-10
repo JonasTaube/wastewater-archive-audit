@@ -1,0 +1,107 @@
+{
+ "chi2_250p3_df3_p": 5.635609488875827e-54,
+ "n": 79364,
+ "pools": {
+  "hub_routed": 78432,
+  "indep_HIC_dom": 543,
+  "indep_LMIC": 389
+ },
+ "cox_main": {
+  "pool_hub": {
+   "HR": 0.0929,
+   "lo": 0.0854,
+   "hi": 0.1012
+  },
+  "pool_lmic": {
+   "HR": 0.2452,
+   "lo": 0.2152,
+   "hi": 0.2793
+  },
+  "coll_year_c": {
+   "HR": 1.0416,
+   "lo": 1.0301,
+   "hi": 1.0534
+  }
+ },
+ "schoenfeld": {
+  "rank": {
+   "coll_year_c": 1.784326490636457e-26,
+   "pool_hub": 1.9244202994060858e-14,
+   "pool_lmic": 4.814214666105614e-28
+  },
+  "km": {
+   "coll_year_c": 1.1845439698230925e-26,
+   "pool_hub": 1.116719904751832e-14,
+   "pool_lmic": 3.482669715681684e-28
+  },
+  "identity": {
+   "coll_year_c": 1.0869448309595949e-240,
+   "pool_hub": 4.6816309657101535e-08,
+   "pool_lmic": 1.0889549254267257e-09
+  }
+ },
+ "clustered_by_country": {
+  "pool_hub": {
+   "HR": 0.0929,
+   "lo": 0.0513,
+   "hi": 0.1685,
+   "p": 5.066298764192261e-15
+  },
+  "pool_lmic": {
+   "HR": 0.2452,
+   "lo": 0.1315,
+   "hi": 0.4572,
+   "p": 9.817930678105255e-06
+  },
+  "coll_year_c": {
+   "HR": 1.0416,
+   "lo": 0.7416,
+   "hi": 1.4631,
+   "p": 0.8138974392250212
+  }
+ },
+ "leave_one_country_out": {
+  "drop_GBR": {
+   "n": 29735,
+   "HR_hub": [
+    0.073,
+    0.079,
+    0.086
+   ],
+   "HR_lmic": [
+    0.343,
+    0.392,
+    0.447
+   ]
+  },
+  "drop_NLD": {
+   "n": 63956,
+   "HR_hub": [
+    0.221,
+    0.241,
+    0.262
+   ],
+   "HR_lmic": [
+    0.204,
+    0.233,
+    0.265
+   ]
+  },
+  "drop_DNK": {
+   "error": "delta contains nan value(s). Convergence halted. Please see the following tips in the lifelines documentation: https://l"
+  },
+  "drop_USA": {
+   "n": 78801,
+   "HR_hub": [
+    0.104,
+    0.123,
+    0.146
+   ],
+   "HR_lmic": [
+    0.264,
+    0.322,
+    0.391
+   ]
+  }
+ }
+}
